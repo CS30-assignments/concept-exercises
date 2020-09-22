@@ -10,25 +10,28 @@
 // print_r(explode("-", $names));
 
 // "algorithm" 400 times
+// $algorithm = [];
 // for ($i = 0; $i < 400; $i++) {
-//     $algorithm[] = 'algorithm';
+//     array_push($algorithm, 'algorithm');
 // }
 // print_r($algorithm);
 
 // multiples of 4
-$multiples = [];
-for ($i = 20; $i <= 800; $i += 4) { 
-    array_push($multiples, $i);
-}
-print_r($multiples);
+// $multiples = [];
+// for ($i = 20; $i <= 800; $i += 4) { 
+//     array_push($multiples, $i);
+// }
+// print_r($multiples);
+
 
 // create random array
-// function createRandomArray($n, $low, $high){
-//     for ($i = 0; $i < $n; $i++) {
-//         $randNum[] = (rand($low, $high));
-//     }
-// }
-
+function createRandomArray($n, $low, $high){
+    $randomNumbers = [];
+    for($i = 0; $i < $n; $i++){
+        array_push($randomNumbers, rand($low, $high));
+    }
+    print_r($randomNumbers);
+}
 
 
 
