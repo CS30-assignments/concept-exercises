@@ -42,7 +42,7 @@
 // function arrayInfo($array){
 //     echo 'Length of Array: ' . count($array) . '<br />';
 //     echo 'First Element: ' . $array[0] . '<br />';
-//     echo 'Last Element: ' . array_pop($array) . '<br />';
+//     echo 'Last Element: ' . $array[count($array) - 1] . '<br />';
 // }
 
 // log negative numbers
@@ -194,15 +194,40 @@ $letters = ["a", "b", "c", "d", "e", "f"];
 // print_r(removeAll($nums, 70));
 
 // <!-- Herons Calculator -->
-function heronsFormula($a, $b, $c){
-   // find s
-   $s = ($a + $b + $c) / 2;
-   // find area
-   $area = sqrt($s * ($s - $a) * ($s - $b) * ($s - $c));
+// function heronsFormula($a, $b, $c){
+//    // find s
+//    $s = ($a + $b + $c) / 2;
+//    // find area
+//    $area = sqrt($s * ($s - $a) * ($s - $b) * ($s - $c));
 
-   return $area;
+//    return $area;
+// }
+
+// print_r(heronsFormula(8, 9, 10));
+
+function binarySearch($anArray, $item){
+    // set lower and upper indexes
+    $l_index = 0;
+    $u_index = count($anArray) - 1;
+  
+    while ($l_index <= $u_index) {
+        // set middle index
+        $m_index = floor(($l_index + $u_index) / 2);
+  
+        // search for value and identify index number
+        if ($item == $anArray[$m_index]) {
+            return $m_index;
+        } elseif ($item < $anArray[$m_index]) {
+            $u_index = $m_index - 1;
+        } else {
+            $l_index = $m_index + 1;
+        }
+    }
+    // if search could not find anything
+    return -1;
 }
 
-print_r(heronsFormula(8, 9, 10));
+ $numbers = [1, 2, 3, 4, 5, 6, 7];
+ print_r(binarySearch($numbers, 8));
 
 ?>
